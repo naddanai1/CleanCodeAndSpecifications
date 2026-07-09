@@ -18,10 +18,11 @@ public class Specs {
 
     // TODO ข้อ 4: เขียน JavaDoc ให้เมธอดนี้
     /**
-     * วนลูบอาร์เรย์หา key โดยส่งค่ากลับไปเป็น 1 ถ้าไม่ใช่ส่ง -1 กลับไป
-     * @param arr อาร์เรย์ ที่มาต้องไม่เป็น null
-     * @param key วนลูปถ้าในอาร์เรย์เท่ากับ key ส่งค่า i กลับ
-     * @return ถ้าไม่ใช่ key ส่งค่า -1 กลับ
+     * คืนค่า index เเรกที่พบ key ถ้าไม่พบให้ -1
+     * @param arr อาร์เรย์ที่ต้องการหาต้องไม่เป็น null
+     * @param key ค่าที่ต้องการค้นหา
+     * @return ถ้าเจอร์ key ให้ส่ง i หรือ ถ้าไม่เจอให้ -1
+     * @throws IllegalArgumentException ถ้าเป็น arr เป็น null
      */
     public static int firstIndexOf(int[] arr, int key) {
         if (arr == null) throw new IllegalArgumentException("arr must not be null");
@@ -31,10 +32,11 @@ public class Specs {
     }
 
     // TODO ข้อ 5: เขียน JavaDoc ให้เมธอดนี้
-    /** ส่งค่า radius ที่มากกว่าหรือเท่ากับ 0
-     * 
-     * @param radius ค่า radius ต้องมากกว่าหรือเท่ากับ 0 จึงส่งค่ากลับได้
-     * @return ส่งค่าพายคูณรัศมีคูณรัศมี
+    /**
+     * คำนวณพื้นที่วงกลมจาก radius ที่กำหนด
+     * @param radius รัศมีของวงกลม ตอนมีค่า >=0
+     * @return สูตรหาพื้นที่วงกลม
+     * @throws IllegalArgumentException ถ้า radius < 0
      */
     public static double circleArea(double radius) {
         if (radius < 0) throw new IllegalArgumentException("radius must be >= 0");
@@ -44,10 +46,11 @@ public class Specs {
     // TODO ข้อ 6: เขียน JavaDoc ให้เมธอดนี้
     //   (เมธอดนี้ตัดช่องว่างหน้า-หลัง แล้วแปลงเป็นตัวพิมพ์เล็ก;
     //    input null ให้คืน string ว่าง)
-    /**ส่งสตริงที่ไม่ใช่ null
-     * 
-     * @param s ถ้าสตริง s เป็น null ส่งค่าค่าเปล่ากลับ
-     * @return ถ้าไม่ใช่ส่งสตริงตัวพิมเล็กกลับไปแ
+
+    /**
+     * ตัดช่องว่างหน้า-หลัง เเล้วเเปลงข้อความเป็นตัวพิมพ์เล็ก
+     * @param s ข้อความที่ต้องที่เป็นปกติ รับค่า null ได้
+     * @return  ข้อมูลที่มีการตัดช่องว่างหน้า-หลัง เเล้วเเปลงเป็นตัวพิมพ์เล็ก หรือ "" ถ้า s เป็น null
      */
     public static String normalize(String s) {
         if (s == null) return "";

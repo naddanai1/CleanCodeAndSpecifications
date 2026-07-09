@@ -9,21 +9,14 @@ public class StringUtils {
      * @throws IllegalArgumentException ถ้า text เป็น null
      */
     public static int countVowels(String text) {
-        
-        if(text == null)
-            throw new IllegalArgumentException("Text is null");
+        if(text==null) throw new IllegalArgumentException("text is null");
         int countVowels=0;
-        String vowels = "aeiou";
-        text = text.toLowerCase();
-
-        for(int i=0 ; i < text.length(); i++){
-            for(int j=0; j < vowels.length();j++){
-                if(text.charAt(i) == vowels.charAt(j)) countVowels++;
-                
-            }
-        }
-            
-        return countVowels++;
-        
+        String vowels ="aeiou";
+        text=text.toLowerCase();
+        for(int i =0;i<text.length();i++)
+            for (int j=0;j< vowels.length(); j++)
+                if(text.charAt(i)==vowels.charAt(j)) countVowels++;
+       
+        return  countVowels;
     }
 }
